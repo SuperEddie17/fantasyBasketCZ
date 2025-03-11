@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: Fantasy League API
+  description: API pro správu týmů a hráčů ve Fantasy League
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Lokální server
+paths:
+  /users:
+    post:
+      summary: Vytvoření nového uživatele
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreationUserDto'
+      responses:
+        '201':
+          description: Uživatel byl úspěšně vytvořen
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDto'
+        '400':
+          description: Neplatný požadavek
+        '409':
+          description: Uživatel s daným jménem již existuje
+
+components:
+  schemas:
+    CreationUserDto:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "John Doe"
+        email:
+          type: string
+          example: "ales.bejr@seznam.cz"
+    UserDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        name:
+          type: string
+          example: "John Doe"
+        email:
+          type: string
+          example: "ales.bejr@seznam.cz"
