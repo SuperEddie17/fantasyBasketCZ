@@ -1,5 +1,6 @@
 package com.fantasy.fantasy_basket_service.user;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +15,7 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/create")
-    public UserDto createUser(@RequestBody CreationUserDto dto) {
+    public UserDto createUser(@RequestBody @Valid CreationUserDto dto) {
         return userService.createUser(dto);
     }
 }
