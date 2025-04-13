@@ -7,12 +7,14 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class PlayerService {
     private final PlayerMapper playerMapper;
+    private final PlayerRepository playerRepository;
+  public PlayerEntity createPlayer(PlayerDTO playerDTO){
 
-   PlayerEntity createPlayer(PlayerDTO playerDTO){
        PlayerEntity playerEntity = playerMapper.toEntity(playerDTO);
 
+       playerRepository.save(playerEntity);
 
-      return null;
+      return playerEntity;
 
    }
 
