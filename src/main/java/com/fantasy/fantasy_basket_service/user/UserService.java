@@ -15,8 +15,7 @@ public class UserService {
         UserEntity userEntity = userMapper.toCreationEntity(creationUserDto);
         userEntity.setBudget(1000);
         userRepository.save(userEntity);
-        UserEntity user =new UserEntity();
-        user.setId(userEntity.getId());
+
 
         return userMapper.toDTO(userEntity);
     }
