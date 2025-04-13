@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class PlayerService {
    PlayerEntity createPlayer(PlayerDTO playerDTO){
        PlayerEntity playerEntity=new PlayerEntity();
-       playerEntity.
+      playerEntity.setFirstName(playerDTO.getFirstName());
 
    }
 
