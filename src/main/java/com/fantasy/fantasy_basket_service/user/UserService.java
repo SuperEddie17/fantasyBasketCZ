@@ -16,7 +16,8 @@ public class UserService {
         userEntity.setBudget(1000);
         userRepository.save(userEntity);
 
-
         return userMapper.toDTO(userEntity);
+
+
     }
 }
