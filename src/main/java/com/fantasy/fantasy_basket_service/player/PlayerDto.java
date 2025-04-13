@@ -3,7 +3,7 @@ package com.fantasy.fantasy_basket_service.player;
 import lombok.Data;
 
 @Data
-public class PlayerDTO {
+public class PlayerDto {
 
 
     private int id;

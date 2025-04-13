@@ -8,14 +8,18 @@ import org.springframework.stereotype.Service;
 public class PlayerService {
     private final PlayerMapper playerMapper;
     private final PlayerRepository playerRepository;
-  public PlayerEntity createPlayer(PlayerDTO playerDTO){
+  public PlayerEntity createPlayer(PlayerDto playerDto){
 
-       PlayerEntity playerEntity = playerMapper.toEntity(playerDTO);
+       PlayerEntity playerEntity = playerMapper.toEntity(playerDto);
 
        playerRepository.save(playerEntity);
 
       return playerEntity;
 
    }
+    public void deletePlayer(int id){
 
+      playerRepository.delete(playerRepository.findById(id));
+
+    }
 }

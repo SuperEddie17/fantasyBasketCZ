@@ -6,6 +6,6 @@ import org.mapstruct.Mapper;
 public interface PlayerMapper {
 
 
-    PlayerEntity toEntity(PlayerDTO source);
+    PlayerEntity toEntity(PlayerDto source);
 
 }
