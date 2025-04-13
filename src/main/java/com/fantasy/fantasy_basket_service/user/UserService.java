@@ -2,7 +2,6 @@ package com.fantasy.fantasy_basket_service.user;
 
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,7 +15,8 @@ public class UserService {
         userEntity.setBudget(1000);
         userRepository.save(userEntity);
 
-
         return userMapper.toDTO(userEntity);
+
+
     }
 }
